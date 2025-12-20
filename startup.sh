@@ -12,11 +12,6 @@ echo -e "Start USB MOUNT" >> "$LOG_FILE"
 echo -e "Pull Repo" >> "$LOG_FILE"
 /home/ri/Christmas_Mini_TV/pull_repo.sh >> "$LOG_FILE" 2>&1 
 
-# Start background image script
-#/bin/sleep 5
-#echo -e "Start Background Image" >> "$LOG_FILE"
-#/usr/bin/python3 /home/ri/Christmas_Mini_TV/background_image.py >> "$LOG_FILE" 2>&1 &
-
 # Start video player
 /bin/sleep 5
 echo -e "Start Video Player" >> "$LOG_FILE"
