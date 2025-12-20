@@ -9,6 +9,6 @@ sudo apt-get install -y fbi
 sudo apt install -y python3-vlc
 
 #Set shell scripts code to executable
-chmod +x /home/ri/Pi_Video_CRT_Player/*.sh
+chmod +x /home/ri/Christmas_Mini_TV/*.sh
 
 echo "[✔] Setup Complete"
