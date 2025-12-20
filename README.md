@@ -26,8 +26,8 @@ Raspberry Pi Setup:
    		sudo crontab -e
 
    add
-   
-   		@reboot /bin/sleep 1; /home/ri/Christmas_Mini_TV/startup.sh > /home/ri/mycronlog.txt 2>&1
+
+       @reboot /bin/sleep 1; /home/ri/Christmas_Mini_TV/startup.sh > /home/ri/mycronlog.txt 2>&1
 
 6. Give Scripts Permission to be Executable
 
