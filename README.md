@@ -35,7 +35,3 @@ Raspberry Pi Setup:
 7. Run Setup
 
 		sudo ./Christmas_Mini_TV/setup.sh
-
-8. Reboot
-
-		sudo reboot
