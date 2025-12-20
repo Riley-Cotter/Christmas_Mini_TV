@@ -1,7 +1,7 @@
 #!/bin/bash
 
-sudo apt -y update
-sudo apt -y upgrade
+#sudo apt -y update
+#sudo apt -y upgrade
 sudo apt install -y python3-pip
 sudo apt-get install -y vlc
 sudo sed -i 's/geteuid/getppid/' /usr/bin/vlc
