@@ -1,6 +1,3 @@
-# Pi_Video_CRT_Player
-Plays videos from a pi on a CRT TV
-
 
 For Windows:
 	Download Ubuntu (Windows Subsystem for Linux)
@@ -22,7 +19,7 @@ Raspberry Pi Setup:
 		sudo apt install git -y
   	then
 	
-		git clone https://github.com/Riley-Cotter/Pi_Video_CRT_Player.git
+		git clone https://github.com/Riley-Cotter/Christmas_Mini_TV.git
 	
 4. Add Program to Startup
   
@@ -30,14 +27,14 @@ Raspberry Pi Setup:
 
    add
    
-   		@reboot /bin/sleep 1; /home/ri/Pi_Video_CRT_Player/startup.sh > /home/ri/mycronlog.txt 2>&1
+   		@reboot /bin/sleep 1; /home/ri/Christmas_Mini_TV/startup.sh > /home/ri/mycronlog.txt 2>&1
 
 6. Give Scripts Permission to be Executable
 
-   		sudo chmod +x /home/ri/Pi_Video_CRT_Player/setup.sh
+   		sudo chmod +x /home/ri/Christmas_Mini_TV/setup.sh
 7. Run Setup
 
-		sudo ./Pi_Video_CRT_Player/setup.sh
+		sudo ./Christmas_Mini_TV/setup.sh
 
 8. Reboot
 
