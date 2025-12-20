@@ -18,7 +18,7 @@ while True:
         print(f"Playing: {video}")
 
         player = instance.media_player_new()
-        media = instance.media_new(video)
+        media = instance.media_new(video, f'start-time={100}')
         player.set_media(media)
 
         player.video_set_aspect_ratio("3:4")
