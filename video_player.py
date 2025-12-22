@@ -21,7 +21,7 @@ while True:
         media = instance.media_new(video)
         player.set_media(media)
 
-        player.video_set_aspect_ratio("16:9")
+        player.video_set_aspect_ratio("3:4")
         player.play()
 
         # --- WAIT UNTIL PLAYBACK ACTUALLY STARTS ---
