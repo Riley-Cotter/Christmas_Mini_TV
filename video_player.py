@@ -2,7 +2,7 @@ import os
 import vlc
 import time
 
-VIDEO_DIR = "/media/usb"
+VIDEO_DIR = "/home/ri/videos"
 VIDEO_EXT = (".mp4", ".mkv", ".avi", ".mov")
 
 instance = vlc.Instance("--aout=alsa")
