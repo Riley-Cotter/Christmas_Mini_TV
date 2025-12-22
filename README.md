@@ -13,15 +13,17 @@ Raspberry Pi Setup:
 		Username: LocalWIFIUsername
    	Password: #LocalPassword
    	Enable SSH
+
+3. While sd card is still in computer, follow instructions here (adding dtoverlays to config and overlay file): https://www.waveshare.com/wiki/2.8inch_DPI_LCD
     
-3. ssh into your RaspberryPi and Clone Repository
+5. ssh into your RaspberryPi and Clone Repository
   
 		sudo apt install git -y
   	then
 	
 		git clone https://github.com/Riley-Cotter/Christmas_Mini_TV.git
 	
-4. Add Program to Startup
+6. Add Program to Startup
   
    		sudo crontab -e
 
@@ -29,9 +31,9 @@ Raspberry Pi Setup:
 
        @reboot /bin/sleep 1; /home/ri/Christmas_Mini_TV/startup.sh > /home/ri/mycronlog.txt 2>&1
 
-6. Give Scripts Permission to be Executable
+7. Give Scripts Permission to be Executable
 
    		sudo chmod +x /home/ri/Christmas_Mini_TV/setup.sh
-7. Run Setup
+8. Run Setup
 
 		sudo ./Christmas_Mini_TV/setup.sh
