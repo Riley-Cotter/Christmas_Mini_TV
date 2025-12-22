@@ -48,7 +48,7 @@ while True:
         while True:
             if GPIO.input(BUTTON_PIN) == GPIO.LOW:
                 player.stop()
-                time.sleep(0.1)
+                time.sleep(0.2)
                 
             state = player.get_state()
             if state in (vlc.State.Ended, vlc.State.Error, vlc.State.Stopped):
@@ -59,4 +59,3 @@ while True:
         player.stop()
         time.sleep(1)
         
-    print("Button was pressed!")
