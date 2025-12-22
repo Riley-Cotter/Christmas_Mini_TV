@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SOURCE="/media/usb"
-DEST="/videos"
+DEST="/home/ri/videos"
 
 # Create destination directory if it doesn't exist
 sudo mkdir -p "$DEST"
