@@ -15,7 +15,7 @@ echo -e "Pull Repo" >> "$LOG_FILE"
 # Start video player
 /bin/sleep 5
 echo -e "Start Video Player" >> "$LOG_FILE"
-#/usr/bin/python3 /home/ri/Christmas_Mini_TV/video_player.py >> "$LOG_FILE" 2>&1 &
+/usr/bin/python3 /home/ri/Christmas_Mini_TV/video_player.py >> "$LOG_FILE" 2>&1 &
 
 # Optional: keep script alive to prevent service from exiting (if needed)
 wait
