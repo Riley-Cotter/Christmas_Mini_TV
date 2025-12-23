@@ -55,11 +55,11 @@ while True:
                 if count < 1:
                     player.audio_toggle_mute()
 
-                if count >= 1 and count < 5:
+                elif count < 5:
                     player.stop()
                     break
                 
-                if count >=5:
+                else:
                     while GPIO.input(BUTTON_PIN) == GPIO.HIGH:
                         time.sleep(0.2)
                         break
