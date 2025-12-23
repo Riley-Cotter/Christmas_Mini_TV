@@ -35,8 +35,6 @@ while True:
 
         player.video_set_aspect_ratio("3:4")
         player.play()
-
-        audio = 1 #1 is on
         
         # --- WAIT UNTIL PLAYBACK ACTUALLY STARTS ---
         start_timeout = time.time() + 5  # max 5 seconds
@@ -55,13 +53,8 @@ while True:
                     count = count + 0.1
                     
                 if count < 1:
-                    if audio == 1:
-                        player.audio_set_volume(0)
-                        audio = 0
-                    if audio == 0:
-                        player.audio_set_volume(100)
-                        audio = 1
-                
+                    player.audio_toggle_mute()
+
                 if count < 5:
                     player.stop()
                     break
