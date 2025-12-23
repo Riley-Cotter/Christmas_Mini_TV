@@ -36,6 +36,8 @@ while True:
         player.video_set_aspect_ratio("3:4")
         player.play()
 
+        audio = 1 #1 is on
+        
         # --- WAIT UNTIL PLAYBACK ACTUALLY STARTS ---
         start_timeout = time.time() + 5  # max 5 seconds
         while player.get_state() in (vlc.State.NothingSpecial, vlc.State.Opening):
@@ -47,12 +49,25 @@ while True:
         # --- MONITOR UNTIL VIDEO ENDS ---
         while True:
             if GPIO.input(BUTTON_PIN) == GPIO.LOW:
-                player.stop()
-                time.sleep(1.0)
-                if GPIO.input(BUTTON_PIN) == GPIO.LOW:
-                    time.sleep(5.0)
-                    while GPIO.input(BUTTON_PIN) == GPIO.HIGH:
-                        time.sleep(0.2)
+                count = 0
+                while GPIO.input(BUTTON_PIN) == GPIO.LOW:
+                    time.sleep(0.1)
+                    count = count + 0.1
+                    if count < 1:
+                        if audio = 1:
+                            player.audio_set_volume(0)
+                            audio = 0
+                            break
+                        if audio = 0:
+                            player.audio_set_volume(100)
+                            audio = 1
+                            break
+                    if count < 5:
+                        player.stop()
+                    if count < 10:
+                        if GPIO.input(BUTTON_PIN) == GPIO.LOW:
+                            while GPIO.input(BUTTON_PIN) == GPIO.HIGH:
+                                time.sleep(0.2)
                 
             state = player.get_state()
             if state in (vlc.State.Ended, vlc.State.Error, vlc.State.Stopped):
