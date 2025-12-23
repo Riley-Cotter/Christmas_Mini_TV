@@ -53,21 +53,23 @@ while True:
                 while GPIO.input(BUTTON_PIN) == GPIO.LOW:
                     time.sleep(0.1)
                     count = count + 0.1
-                    if count < 1:
-                        if audio = 1:
-                            player.audio_set_volume(0)
-                            audio = 0
-                            break
-                        if audio = 0:
-                            player.audio_set_volume(100)
-                            audio = 1
-                            break
-                    if count < 5:
-                        player.stop()
-                    if count < 10:
-                        if GPIO.input(BUTTON_PIN) == GPIO.LOW:
-                            while GPIO.input(BUTTON_PIN) == GPIO.HIGH:
-                                time.sleep(0.2)
+                    
+                if count < 1:
+                    if audio = 1:
+                        player.audio_set_volume(0)
+                        audio = 0
+                    if audio = 0:
+                        player.audio_set_volume(100)
+                        audio = 1
+                
+                if count < 5:
+                    player.stop()
+                    break
+                
+                if count < 10:
+                    while GPIO.input(BUTTON_PIN) == GPIO.HIGH:
+                        time.sleep(0.2)
+                        break
                 
             state = player.get_state()
             if state in (vlc.State.Ended, vlc.State.Error, vlc.State.Stopped):
