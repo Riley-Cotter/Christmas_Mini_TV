@@ -55,10 +55,10 @@ while True:
                     count = count + 0.1
                     
                 if count < 1:
-                    if audio = 1:
+                    if audio == 1:
                         player.audio_set_volume(0)
                         audio = 0
-                    if audio = 0:
+                    if audio == 0:
                         player.audio_set_volume(100)
                         audio = 1
                 
