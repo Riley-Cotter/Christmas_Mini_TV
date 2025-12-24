@@ -34,6 +34,11 @@ Raspberry Pi Setup:
 7. Give Scripts Permission to be Executable
 
    		sudo chmod +x /home/ri/Christmas_Mini_TV/setup.sh
+
 8. Run Setup
 
 		sudo ./Christmas_Mini_TV/setup.sh
+
+9. Copy over videos
+
+    	sudo ./Christmas_Mini_TV/copy_usb_to_sd.sh
