@@ -48,6 +48,7 @@ while True:
         while True:
             if GPIO.input(BUTTON_PIN) == GPIO.LOW:
                 count = 0
+                time.sleep(.15)
                 while GPIO.input(BUTTON_PIN) == GPIO.LOW:
                     time.sleep(0.1)
                     count = count + 0.1
@@ -61,7 +62,8 @@ while True:
                     time.sleep(5.0)
                     while GPIO.input(BUTTON_PIN) == GPIO.HIGH:
                         time.sleep(0.2)
-                        break
+                        
+                    break
                         
             state = player.get_state()
             if state in (vlc.State.Ended, vlc.State.Error, vlc.State.Stopped):
