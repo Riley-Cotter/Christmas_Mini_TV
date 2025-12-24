@@ -19,6 +19,9 @@ VIDEO_EXT = (".mp4", ".mkv", ".avi", ".mov")
 # Create Video Instance
 instance = vlc.Instance("--aout=alsa")
 
+#Create Volume Level 
+VolLevel = 100
+
 while True:
     files = sorted([
         os.path.join(VIDEO_DIR, f)
@@ -34,6 +37,7 @@ while True:
         player.set_media(media)
 
         player.video_set_aspect_ratio("3:4")
+        player.audio_set_volume(VolLevel)
         player.play()
         
         # --- WAIT UNTIL PLAYBACK ACTUALLY STARTS ---
@@ -48,16 +52,20 @@ while True:
         while True:
             if GPIO.input(BUTTON_PIN) == GPIO.LOW:
                 count = 0
-                time.sleep(.15)
+                time.sleep(.1)
                 while GPIO.input(BUTTON_PIN) == GPIO.LOW:
                     time.sleep(0.1)
                     count = count + 0.1
                 if count < 1:
-                    player.audio_toggle_mute()
-                if count > 1 and count < 10:
+                    if VolLevel == 100:
+                        VolLevel = 0
+                    else:
+                        VolLevel = 100
+                    player.audio_set_volume(VolLevel)
+                if count > 1 and count < 5:
                     player.stop()
                     break
-                if count > 10:
+                if count > 5:
                     player.stop()
                     time.sleep(5.0)
                     while GPIO.input(BUTTON_PIN) == GPIO.HIGH:
@@ -68,9 +76,10 @@ while True:
             state = player.get_state()
             if state in (vlc.State.Ended, vlc.State.Error, vlc.State.Stopped):
                 break
-            time.sleep(0.5)
+            time.sleep(0.1)
 
         # Give VLC time to release the file
         player.stop()
         time.sleep(1)
         
+    
