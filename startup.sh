@@ -13,7 +13,7 @@ echo -e "\n== Startup initiated: $(date) ==" > "$LOG_FILE"
 #/home/ri/Christmas_Mini_TV/pull_repo.sh >> "$LOG_FILE" 2>&1 
 
 # Start video player
-/bin/sleep 5
+/bin/sleep 20
 echo -e "Start Video Player" >> "$LOG_FILE"
 /usr/bin/python3 /home/ri/Christmas_Mini_TV/video_player.py >> "$LOG_FILE" 2>&1 &
 
